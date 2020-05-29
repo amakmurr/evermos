@@ -17,6 +17,7 @@ There's 2 endpoint for this solution
 |----------|------|-----------|
 |/api/container|GET|get list of Rahman's ball container|
 |/api/container/put|POST|put ball to one of Rahman's ball container|
+You will get 403 http status code when hitting `/api/container/put` endpoint when there's verified ball container on databases.
 
 ### Mom's Kitara Store
 There's 4 endpoint for this solution
