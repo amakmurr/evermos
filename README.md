@@ -23,8 +23,8 @@ There's 4 endpoint for this solution
 |endpoint  |method|description|
 |----------|------|-----------|
 |/api/product|GET|get list of products|
-|/api/product/{id}/pessimisticOrder|POST|order product with pessimistic approach to avoid race condition|
-|/api/product/{id}/optimisticOrder|POST|order product with optimistic approach to avoid race condition|
+|/api/product/{id}/pessimisticOrder|POST|order product with pessimistic approach to handling race condition|
+|/api/product/{id}/optimisticOrder|POST|order product with optimistic approach to handling race condition|
 |/api/order|GET|get list of orders|
 
 There's 2 approach I am implemeted to handling race condition when many order occurred for same product at a time.
@@ -41,7 +41,7 @@ Pessimistic Locking Approach will be a nightmare if PHP script died due to fatal
 
 3. Async Approach
    
-   There other approach I am not implement here as other option to handling order race condition. Async approach is the system will queueing the order requests and tell user when process is done later. Below is sequence diagram to do this approach.
+   There other approach I am not implement here as another option to handling order race condition. Async approach is the system will queueing the order requests and tell user when process is done later. Below is sequence diagram to do this approach.
 
    <img src="race-condition-async-approach.jpg"
      alt="Race Condition Async Approach"
