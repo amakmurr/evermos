@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::prefix('container')->group(function () {
     Route::get('/', 'ContainerController@index');
     Route::post('/put', 'ContainerController@put');
