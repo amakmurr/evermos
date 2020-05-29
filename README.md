@@ -17,6 +17,7 @@ There's 2 endpoint for this solution
 |----------|------|-----------|
 |/api/container|GET|get list of Rahman's ball container|
 |/api/container/put|POST|put ball to one of Rahman's ball container|
+
 You will get 403 http status code when hitting `/api/container/put` endpoint when there's verified ball container on databases.
 
 ### Mom's Kitara Store
@@ -28,7 +29,7 @@ There's 4 endpoint for this solution
 |/api/product/{id}/optimisticOrder|POST|order product with optimistic approach to handling race condition|
 |/api/order|GET|get list of orders|
 
-There's 2 approach I am implemeted to handling race condition when many order occurred for same product at a time.
+There's 2 approach I've implemeted to handling race condition when many order occurred for same product at a time.
 
 1. Pessimistic Locking Approach
    
@@ -42,7 +43,7 @@ Pessimistic Locking Approach will be a nightmare if PHP script died due to fatal
 
 3. Async Approach
    
-   There other approach I am not implement here as another option to handling order race condition. Async approach is the system will queueing the order requests and tell user when process is done later. Below is sequence diagram to do this approach.
+   There other approach I am not implement here as another option to handling order race condition. Async approach is the system will queueing the order requests and tell user about their order status when process is done later. Below is sequence diagram to do this approach.
 
    <img src="race-condition-async-approach.jpg"
      alt="Race Condition Async Approach"
