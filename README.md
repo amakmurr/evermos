@@ -37,9 +37,11 @@ There's 2 approach I am implemeted to handling race condition when many order oc
    
    The Optimistic locking approach is the the system assumes that although race conditions may occur, they are very rare. Therefore, instead of locking the record on every access, it looks for indications which denote the clients actually did try to update the record at the same time.
 
+Pessimistic Locking Approach will fail if PHP script died due to fatal error or some other problem and the database left with the lock active. Optimistic Locking Approach will fail if system using concurency process to provide high performance API then there's order requests occurred between time less than 1 sec the system will assumes that order requests is valid requests.
+
 3. Async Approach
    
-   There other approach I am not implemetent here. Async approach is the system will queueing the order requests. Below is sequence diagram to do this approach.
+   There other approach I am not implement here as other option to handling order race condition. Async approach is the system will queueing the order requests and tell user when process is done later. Below is sequence diagram to do this approach.
 
    <img src="race-condition-async-approach.jpg"
      alt="Race Condition Async Approach"
